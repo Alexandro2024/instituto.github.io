@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Instituto Ide - Formulário de Inscrição</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-color: #f2f2f2; /* Cor de fundo */
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            width: 50%;
-            margin: auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 10px;
@@ -20,17 +23,18 @@
             text-align: center;
         }
         .logo img {
-            max-width: 100px;
+            max-width: 100%;
+            height: auto;
             margin-bottom: 10px;
         }
         h1 {
             text-align: center;
-            color: #e74c3c; /* Vermelho */
+            color: #25379b; /* Azul */
         }
         label {
             display: block;
             margin: 10px 0 5px;
-            color: #e67e22; /* Laranja */
+            color: #000000; /* Laranja */
         }
         input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select {
             width: 100%;
@@ -38,18 +42,32 @@
             margin: 5px 0 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         input[type="submit"] {
-            background-color: #e74c3c; /* Vermelho */
+            background-color: #25379b; /* Azul */
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
         }
         input[type="submit"]:hover {
-            background-color: #c0392b; /* Cor mais escura para o hover */
+            background-color: #349e1f; /* Cor mais escura para o hover */
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 10px;
+            }
+            input[type="submit"] {
+                padding: 10px;
+                font-size: 14px;
+            }
         }
     </style>
     <script>
@@ -66,7 +84,7 @@
             const assinaturaResponsavel = document.getElementById('assinatura_responsavel').value;
             
             const mensagem = `Nome Completo: ${nomeCompleto}%0ANome do Responsável: ${nomeResponsavel}%0AIdade: ${idade}%0AData de Nascimento: ${dataNascimento}%0AEmail: ${email}%0ATelefone: ${telefone}%0ACelular (WhatsApp): ${celularWhatsApp}%0AAtividade: ${atividade}%0AAssinatura do Responsável: ${assinaturaResponsavel}`;
-            const telefoneWhatsApp = '5521992020226'; // Coloque aqui o número de telefone do WhatsApp de destino
+            const telefoneWhatsApp = '5521974947392'; // Coloque aqui o número de telefone do WhatsApp de destino
             
             const url = `https://wa.me/${telefoneWhatsApp}?text=${mensagem}`;
             window.open(url, '_blank');
@@ -76,8 +94,8 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="logo.jpeg" width="100" height="115" alt="Logomarca do Instituto Ide">
-            <h1></h1>
+            <img src="logo.jpeg" width="200" height="200" alt="Logomarca do Instituto Ide">
+            <h1>Inscrição</h1>
         </div>
         <form onsubmit="enviarParaWhatsApp(event)">
             <label for="nome_completo">Nome Completo do Candidato:</label>
@@ -103,11 +121,13 @@
 
             <label for="atividade">Atividade:</label>
             <select id="atividade" name="atividade" required>
-                <option value="Funcional">Funcional</option>
-                <option value="MMA">MMA</option>
-                <option value="Muay Thai">Muay Thai</option>
-                <option value="Jiu-Jitsu">Jiu-Jitsu</option>
-                <option value="Boxe">Boxe</option>
+                <option value="Funcional">Selecionar</option>
+                <option value="Funcional">Funcional (3 Vagas)</option>
+                <option value="MMA">MMA (4 Vagas)</option>
+                <option value="Muay Thai">Muay Thai (2 Vagas)</option>
+                <option value="Jiu-Jitsu">Jiu-Jitsu (7 Vagas)</option>
+                <option value="Boxe">Boxe (5 Vagas)</option>
+                <option value="Boxe">Alcoólicos Anonimos (5 Vagas)</option>
             </select>
             
             <label for="assinatura_responsavel">Assinatura do Responsável do Candidato:</label>
