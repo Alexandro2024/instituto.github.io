@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Instituto Ide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .header, .footer {
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 150px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .media {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .media img, .media video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .enrollment {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Sua mensagem foi enviada com sucesso!');
+                this.reset();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logomarca do Instituto XYZ">
+        </div>
+        <h1></h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Bem-vindo</h2>
+            <p>Estamos felizes em recebê-lo em nosso instituto. Nossa missão é espalhar conhecimento e proporcionar desenvolvimento pessoal para todos. Junte-se a nós em nossos eventos e atividades para compartilhar momentos de aprendizado e crescimento.</p>
+        </div>
+
+        <div class="section">
+            <h2>Horários das Atividades</h2>
+            <p><strong>Terça Feira:</strong> 10:00 - 12:00</p>
+            <p><strong>Quarta-feira:</strong> 19:00 - 21:00</p>
+            <p><strong>Quinta Feira:</strong> 18:00 - 20:00</p>
+        </div>
+
+        <div class="section media">
+            <div>
+                <h2>Galeria de Imagens</h2>
+                <img src="WhatsApp Image 2024-05-23 at 20.57.56.jpeg" width="187" alt="Imagem 1">
+                <img src="WhatsApp Image 2024-05-23 at 20.56.57.jpeg" width="150" alt="Imagem 2">
+                <img src="WhatsApp Image 2024-05-23 at 21.00.08 (1).jpeg" width="187" alt="Imagem 3">
+            </div>
+            <div>
+                <h2>Vídeos</h2>
+                <video width="200" controls> 
+                    <source src="WhatsApp Video 2024-05-23 at 20.58.20.mp4" width="15" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <video width="200" controls>
+                    <source src="WhatsApp Video 2024-05-23 at 20.59.11.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+
+      
+
+        <div class="section enrollment">
+            <h2>Inscreva-se em Nossas Aulas</h2>
+            <p>Quer participar das nossas atividades e se desenvolver conosco? Inscreva-se nas aulas disponíveis agora mesmo!</p>
+            <a href="index.html" class="button">Inscreva-se Aqui</a>
+        </div>
+
+        <div class="section">
+            <h2>Contato</h2>
+            <form id="contactForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <a href="index.html" class="button">Enviar</a>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Instituto Ide. Todos os direitos reservados.</p>
+        <p> CNPJ: 00.000.000/0000-00</p>
+    </div>
+</body>
+</html>
