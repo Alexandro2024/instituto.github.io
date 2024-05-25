@@ -9,11 +9,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #333;
+            background: linear-gradient(to bottom, #ffffff, #4CAF50);
+            color: #ffffff;
         }
-        .header, .footer {
-            background-color: #000000;
+        .header {
             color: rgb(255, 255, 255);
             text-align: center;
             padding: 7px 0;
@@ -23,8 +22,8 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 10px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 190px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .section {
@@ -36,13 +35,16 @@
             margin-bottom: 20px;
         }
         .logo img {
-            max-width: 150px;
+            max-width: 180px;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #4CAF50;
         }
-        p {
-            line-height: 1.6;
+        .footer {
+            color: #000000;
+            text-align: center;
+            padding: 7px 0;
+            line-height: 1.0;
         }
         .button {
             display: inline-block;
@@ -50,11 +52,11 @@
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 20px;
             transition: background-color 0.3s;
         }
         .button:hover {
-            background-color: #45a049;
+            background-color: #000000;
         }
         form {
             display: flex;
@@ -85,20 +87,90 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-        .media {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
         .media img, .media video {
             max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .media-item {
+            margin: 20px 0;
+            position: relative;
+            text-align: center;
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            max-width: 500px;
+        }
+        .media-item:nth-child(odd) img, .media-item:nth-child(odd) video {
+            float: left;
+            margin-right: 20px;
+        }
+        .media-item:nth-child(even) img, .media-item:nth-child(even) video {
+            float: right;
+            margin-left: 20px;
+        }
+        .media-item::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .media-item span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .media-item:nth-child(odd) span {
+            right: 140px;
+        }
+        .media-item:nth-child(even) span {
+            left: 140px;
+        }
         .enrollment {
             text-align: center;
             margin: 20px 0;
+        }
+        .donations, .contact {
+            text-align: center;
+            margin: 20px 0;
+        }
+        /* Media Queries for Mobile Devices */
+        @media (max-width: 768px) {
+            .media-item img, .media-item video {
+                max-width: 230px;
+                float: none;
+                margin: 10px auto;
+            }
+            .media-item span {
+                position: static;
+                transform: none;
+                margin-top: 10px;
+                display: block;
+            }
+        }
+        .organizers {
+            text-align: center;
+            margin: 20px 0;
+            border-color: #cf2d2d;
+        }
+        .organizers img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+           
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .organizers p {
+            color: #ffffff;
+            font-size: 18px;
+            
+        }
+        h3 {
+            text-align: center;
         }
     </style>
     <script>
@@ -114,47 +186,116 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="logo.jpeg" alt="Logomarca do Instituto XYZ">
+            <img src="logo.jpeg" alt="Logomarca do Instituto Ide">
         </div>
-        <h1></h1>
+        <h1>Instituto Ide Transformando Vidas!</h1>
     </div>
-
+    
     <div class="container">
         <div class="section">
-            <h2>Bem-vindo</h2>
+            <h2>Sejam Todos Bem-Vindos</h2>
             <p>Estamos felizes em recebê-lo em nosso instituto. Nossa missão é espalhar conhecimento e proporcionar desenvolvimento pessoal para todos. Junte-se a nós em nossos eventos e atividades para compartilhar momentos de aprendizado e crescimento.</p>
         </div>
 
-       
-
-        <div class="section media">
-            <div>
-                <h2>Galeria de Imagens</h2>
-                <img src="WhatsApp Image 2024-05-23 at 20.57.56.jpeg" width="187" alt="Imagem 1">
-                <img src="WhatsApp Image 2024-05-23 at 20.56.57.jpeg" width="150" alt="Imagem 2">
-                <img src="WhatsApp Image 2024-05-23 at 21.00.08 (1).jpeg" width="187" alt="Imagem 3">
+        <div class="section media"> 
+            <div class="media-item"> 
+                <img src="WhatsApp Image 2024-05-23 at 20.57.56.jpeg" alt="Imagem 1"> <br><br><br><br>
+                <span>Jiu-Jitsu das Crianças às Terça-Feira</span>
             </div>
-            <div>
-                <h2>Vídeos</h2>
-                <video width="130" controls> 
-                    <source src="WhatsApp Video 2024-05-23 at 20.58.20.mp4" type="video/mp4">
+            <div class="media-item">
+                <img src="WhatsApp Image 2024-05-23 at 20.56.57.jpeg" alt="Imagem 2"> <br><br><br><br><br><br>
+                <span>Funcional das Mulheres</span>
+            </div>
+            <div class="media-item">
+                <img src="WhatsApp Image 2024-05-23 at 21.00.08 (1).jpeg" alt="Imagem 3"> <br><br><br><br>
+                <span>Muay Thai das Crianças! Todas as Terça e Quinta às 09:30</span>
+            </div>
+            
+            <div class="media-item">
+                <img src="WhatsApp Image 2024-05-23 at 21.00.08 (1).jpeg" alt="Imagem 3"> <br><br><br><br>
+                <span>Muay Thai das Crianças! Todas as Terça e Quinta às 09:30</span>
+            </div>
+            
+            <div class="media-item">
+                <img src="WhatsApp Image 2024-05-23 at 21.00.08 (1).jpeg" alt="Imagem 3"> <br><br><br><br>
+                <span>Muay Thai das Crianças! Todas as Terça e Quinta às 09:30</span>
+            </div>
+            
+            <br>
+
+
+            <h4>Assista um Pequeno Vídeo de Nossas Aulas</h4>
+            <div class="media-item"> <br><br><br>
+                <video controls>
+                    <source src="WhatsApp Video 2024-05-23 at 20.58.20.mp4" type="video/mp4"> 
                     Seu navegador não suporta o elemento de vídeo.
-                </video>
-                <video width="130" controls>
+                </video><br><br><br><br><br><br><br><br><br><br><br>
+                <span>Aula das Crianças de MMA</span>
+            </div>
+
+
+            <div class="media-item">
+                <video controls>
                     <source src="WhatsApp Video 2024-05-23 at 20.59.11.mp4" type="video/mp4">
                     Seu navegador não suporta o elemento de vídeo.
-                </video>
+                </video> <br><br><br><br><br><br><br><br><br><br><br>
+                <span>Aula das Crianças de MMA</span>
+            </div>
+
+            <div class="media-item">
+                <video controls>
+                    <source src="WhatsApp Video 2024-05-23 at 20.59.11.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video> <br><br><br><br><br><br><br><br><br><br><br>
+                <span>Aula das Crianças de MMA</span>
+            </div>
+
+            <div class="media-item">
+                <video controls>
+                    <source src="WhatsApp Video 2024-05-23 at 20.59.11.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video> <br><br><br><br><br><br><br><br><br><br><br>
+                <span>Aula das Crianças de MMA</span>
             </div>
         </div>
 
+        <br>
+
+        <h3>Quem São Os Organizadores Do Instituto Ide?</h3>
+        <div class="organizers">
+            <div>
+                <img src="logo.jpeg" alt="Diretor Adelson">
+                <p>Diretor Adelson</p>
+            </div>
+            <div>
+                <img src="logo.jpeg" alt="Vice Diretor Ricardo">
+                <p>Vice Diretor Ricardo</p>
+            </div>
+            <div>
+                <img src="logo.jpeg" alt="Secretário Thiago">
+                <p>Secretário Thiago</p>
+            </div>
+            <div>
+                <img src="logo.jpeg" alt="Secretária Érika">
+                <p>Secretária Érika</p>
+            </div>
+        </div>
+        <br><br><br>
+
         <div class="section">
-            <h2>Horários das Atividades</h2>
-            <p><strong>Terça Feira:</strong> 10:00 - 12:00</p>
-            <p><strong>Quarta-feira:</strong> 19:00 - 21:00</p>
-            <p><strong>Quinta Feira:</strong> 18:00 - 20:00</p>
+            <h2>Atividades e Horários Do Instituto Ide</h2>
+            <p><strong>** "MUAY THAY-KICKBOXING-MMA-BOXING" Terça e Quinta as 09:30HS (Manhã) (Jovens e Adultos)</strong> 10:00 - 12:00</p>
+            <p><strong>** "JIU JITSU" Segunda-Quarta-Sexta (a partir de 5 Anos)</strong> 09:00ha - (Manhã)</p>
+            <p><strong>** "AIKIDO" Terça-Feira </strong> 20:00ha - (Adultos/Noite)</p>
+            <p><strong>** "FUNCIONAL" Terça e Quinta </strong> 08:00ha - (Manhã)</p>
+            <p><strong>** "INGLÊS INFANTIL" Terça e Quinta</strong> 15:00ha ás 16:00ha (7 a 12 Anos)</p>
+            <p><strong>** "INGLÊS" Jovens e Adultos - Terça e Quinta</strong> 19:00ha - a partir de 15 Anos</p>
+            <p><strong>** "Violão" - Quinta-Feira</strong> 19:00hs - Jovens e Adultos</p>
+            <p><strong>** "ALCOÓLICOS ANÔNIMOS" - Quinta-Feira</strong> 19:00hs</p>
+            <p><strong>** "DENTISTA" - (Quinzenalmente) - Quarta Feira </strong>/ OBS: Agendamento de Horário</p>
         </div>
 
-      
+        <br><br><br>
 
         <div class="section enrollment">
             <h2>Inscreva-se em Nossas Aulas</h2>
@@ -162,14 +303,17 @@
             <a href="index(2).html" class="button">Inscreva-se Aqui</a>
         </div>
 
-        
+     
 
-        
-    </div>
+    
 
-    <div class="footer">
-        <p>&copy; 2024 Instituto Ide. Todos os direitos reservados.</p>
-        <p> CNPJ: 00.000.000/0000-00</p>
+ 
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Instituto Ide. Todos os direitos reservados.</p>
+            <p>CNPJ: 00.000.000/0000-00</p>
+        </div>
     </div>
 </body>
 </html>
