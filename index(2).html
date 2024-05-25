@@ -34,15 +34,18 @@
         label {
             display: block;
             margin: 10px 0 5px;
-            color: #000000; /* Laranja */
+            color: #000000; /* Preto */
         }
-        input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select {
+        input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select, textarea {
             width: 100%;
             padding: 10px;
             margin: 5px 0 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
         }
         input[type="submit"] {
             background-color: #25379b; /* Azul */
@@ -58,7 +61,6 @@
         input[type="submit"]:hover {
             background-color: #349e1f; /* Cor mais escura para o hover */
         }
-
         @media (max-width: 600px) {
             .container {
                 width: 90%;
@@ -82,8 +84,9 @@
             const celularWhatsApp = document.getElementById('celular_whatsapp').value;
             const atividade = document.getElementById('atividade').value;
             const assinaturaResponsavel = document.getElementById('assinatura_responsavel').value;
+            const duvidas = document.getElementById('duvidas').value;
             
-            const mensagem = `Nome Completo: ${nomeCompleto}%0ANome do Responsável: ${nomeResponsavel}%0AIdade: ${idade}%0AData de Nascimento: ${dataNascimento}%0AEmail: ${email}%0ATelefone: ${telefone}%0ACelular (WhatsApp): ${celularWhatsApp}%0AAtividade: ${atividade}%0AAssinatura do Responsável: ${assinaturaResponsavel}`;
+            const mensagem = `Nome Completo: ${nomeCompleto}%0ANome do Responsável: ${nomeResponsavel}%0AIdade: ${idade}%0AData de Nascimento: ${dataNascimento}%0AEmail: ${email}%0ATelefone: ${telefone}%0ACelular (WhatsApp): ${celularWhatsApp}%0AAtividade: ${atividade}%0AAssinatura do Responsável: ${assinaturaResponsavel}%0ADúvidas: ${duvidas}`;
             const telefoneWhatsApp = '5521974947392'; // Coloque aqui o número de telefone do WhatsApp de destino
             
             const url = `https://wa.me/${telefoneWhatsApp}?text=${mensagem}`;
@@ -132,6 +135,9 @@
             
             <label for="assinatura_responsavel">Assinatura do Responsável do Candidato:</label>
             <input type="text" id="assinatura_responsavel" name="assinatura_responsavel" required>
+            
+            <label for="duvidas">Deixe suas dúvidas aqui:</label>
+            <textarea id="duvidas" name="duvidas" rows="4"></textarea>
             
             <input type="submit" value="Enviar">
         </form>
